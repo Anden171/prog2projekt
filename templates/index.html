@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>GymGear</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <nav>
         <div class="navbar">
-            <img src="image-removebg-preview (10).png">
+            <a href="index.html">
+                <img src="{{url_for('static', filename='image.png')}}" alt="GymGear Logo" />
+            </a>
             <ul class="navbar-menu">
-                <li><a href="store.html">Store</a></li>
-                <li><a href="account.html">Account</a></li>
-                <li><a href="cart.html">Shopping Cart</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="shoes.html">Shoes</a></li>
+                <li><a href="Equipment.html">Equipment</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search..." />
+                    <img src="{{url_for('static', filename='magnifying-glass.png')}}" class="search-icon" />
+                </li>
+                <li>
+                    <a href="cart.html">
+                        Cart <img src="{{url_for('static', filename='cart.png')}}" class="icon" />
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>

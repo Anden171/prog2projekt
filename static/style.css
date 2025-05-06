@@ -1,0 +1,103 @@
+body{
+    background-color:grey;
+}
+.navbar {
+    background-color: pink; 
+    color: white; 
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    padding: 10px 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    display: flex; 
+    align-items: center; 
+}
+
+.navbar img {
+    height: 55px; 
+    margin-right: 25px; 
+}
+
+.navbar-menu {
+    display: flex; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+
+
+.navbar-menu {
+    display: flex; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    align-items: center; 
+    justify-content: space-around;
+    width: 100%;
+}
+
+.navbar-menu li {
+    margin: 0; 
+}
+
+.navbar-menu a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 32px; 
+    position: relative; /* Required for the ::after pseudo-element */
+}
+
+.navbar-menu a::after {
+    content: ''; /* Creates the underline */
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    width: 0; /* Initially, the underline is hidden */
+    height: 3px; /* Thickness of the underline */
+    background-color: black; /* Color of the underline */
+    transition: width 0.3s ease-in-out; /* Smoothly animates the width */
+}
+
+.navbar-menu a:hover::after {
+    width: 100%; /* Expands the underline from left to right */
+}
+
+.navbar-menu a img.icon {
+    height: 32px;
+    width: 32px;
+    margin-left: 5px;
+}
+
+.search-container {
+    position: relative; /* Allows positioning of the icon relative to the search bar */
+    display: inline-block; /* Ensures the container wraps tightly around the search bar and icon */
+    width: 200px; /* Matches the width of the search bar */
+}
+
+.search-bar {
+    height: 32px; /* Matches the height of the navbar items */
+    font-size: 16px; /* Adjusts font size for readability */
+    padding: 5px 10px; /* Adds padding inside the search bar */
+    padding-left: 35px; /* Adds space for the magnifying glass icon */
+    border: 1px solid #000000; /* Default border width */
+    border-radius: 5px; /* Rounds the corners */
+    width: 100%; /* Ensures the search bar fills the container */
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    transition: border-width 0.3s ease; /* Smoothly animates the border width */
+}
+
+.search-bar:hover {
+    border-width: 2px; /* Increases the border width on hover */
+}
+
+.search-icon {
+    position: absolute; /* Positions the icon inside the search bar */
+    left: 10px; /* Aligns the icon to the left inside the search bar */
+    top: 50%; /* Vertically centers the icon */
+    transform: translateY(-50%); /* Adjusts for vertical centering */
+    height: 20px !important; /* Adjusts the size of the icon */
+    width: 20px !important; /* Adjusts the size of the icon */
+    pointer-events: none; /* Ensures the icon doesn't block input clicks */
+}
