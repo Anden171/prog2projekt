@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GymGear</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GymGear - {{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
     <nav>
         <div class="navbar">
-            <a href="index.html">
-                <img src="{{url_for('static', filename='image.png')}}" alt="GymGear Logo" />
+            <a href="/">
+                <img src="{{ url_for('static', filename='image.png') }}" alt="GymGear Logo" />
             </a>
             <ul class="navbar-menu">
-                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="/">Clothing</a></li>
                 <li><a href="shoes.html">Shoes</a></li>
                 <li><a href="Equipment.html">Equipment</a></li>
                 <li><a href="accessories.html">Accessories</a></li>
                 <li class="search-container">
                     <input type="text" class="search-bar" placeholder="Search..." />
-                    <img src="{{url_for('static', filename='magnifying-glass.png')}}" class="search-icon" />
+                    <img src="{{ url_for('static', filename='magnifying-glass.png') }}" class="search-icon" />
                 </li>
                 <li>
-                    <a href="cart.html">
-                        Cart <img src="{{url_for('static', filename='cart.png')}}" class="icon" />
+                    <a href="{{ url_for('cart') }}" class="cart-link">
+                        Cart
+                        <img src="{{ url_for('static', filename='cart.png') }}" class="icon" />
+                        {% if cart_count and cart_count > 0 %}
+                        <span class="cart-badge">{{ cart_count }}</span>
+                        {% endif %}
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-    
+
+    <main style="margin-top: 100px; padding: 20px;">
+        <h1>{{ title }} - GymGear</h1>
+        <div class="product-grid">
+            {% if products %}
+                {% for product in products %}
+                <div class="product-card">
+                    <img src="{{ url_for('static', filename='gymhoodie.jpg') }}" alt="Test Image" />
+                    <h3>{{ product['title'] }}</h3>
+                    <p>{{ product['price'] }} USD</p>
+                    <form method="post" action="{{ url_for('add_to_cart', product_id=product['id']) }}">
+                        <button type="submit">Add to Cart</button>
+                    </form>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No products found.</p>
+            {% endif %}
+        </div>
+    </main>
 </body>
 </html>

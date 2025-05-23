@@ -1,0 +1,196 @@
+@import url("style.css"); /* Reuse main styles */
+
+/* Cart-specific styles */
+main {
+    max-width: 700px;
+    margin: 100px auto 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item h3 {
+    margin: 0 0 8px 0;
+    color: #222;
+}
+
+.cart-item p {
+    margin: 0 0 8px 0;
+    color: #555;
+}
+
+.quantity-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 6px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+}
+
+button[type="submit"] {
+    padding: 12px;
+    font-size: 18px;
+    background-color: #e91e63;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 180px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c2185b;
+}
+
+/* Smaller product images */
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Total text styling */
+.total-price {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: right;
+    color: #222;
+    margin-top: 10px;
+}
+
+/* Additional cart summary styles */
+.cart-summary {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #222;
+}
+
+/* Clear cart button styles (if you want to add a clear cart link) */
+.clear-cart {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.clear-cart:hover {
+    background-color: red;
+}
+
+/* Payment form is hidden by default */
+#payment-form {
+    display: none;
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Buy Now button style */
+#buy-btn {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 200px;
+}
+#buy-btn:hover {
+    background-color: #c2185b;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Place order submit button */
+button[type="submit"].place-order {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+button[type="submit"].place-order:hover {
+    background-color: #388e3c;
+}
